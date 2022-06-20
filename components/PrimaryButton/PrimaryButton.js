@@ -3,14 +3,14 @@ import { Text, View, TouchableOpacity, Dimensions } from "react-native";
 
 const width = Dimensions.get("window").width;
 
-const Button = ({
+const PrimaryButton = ({
   text,
   onPress,
   type = "filled",
   bordered = false,
   size = "large",
 }) => {
-  const large = width / 1.3;
+  const large = "100%";
   const small = width / 2;
   const btnSize = size === "large" ? large : small;
   const btnBgColor = type === "filled" ? "#6dbe4b" : "transparent";
@@ -46,4 +46,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default PrimaryButton;
