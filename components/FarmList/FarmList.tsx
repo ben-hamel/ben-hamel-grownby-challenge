@@ -18,8 +18,22 @@ interface FarmListProps {
   modalState: boolean;
 }
 
+//type for the FlatList
+// type FlatListProps = {
+//   data: farmData[];
+//   renderItem: (item: farmData) => JSX.Element;
+//   keyExtractor: (item: farmData) => string;
+// };
+
+//type for the FlatList's renderItem
+// type FlatListRenderItemProps = {
+//   item: farmData;
+// };
+
+//
+
 const FarmList = ({ modalState }: FarmListProps) => {
-  const [farms, setFarms] = useState([]);
+  const [farms, setFarms] = useState<farmType[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -32,7 +46,7 @@ const FarmList = ({ modalState }: FarmListProps) => {
         return {
           id: doc.id,
           ...doc.data(),
-        };
+        } as farmType;
       });
       setFarms(data);
       setLoading(false);
