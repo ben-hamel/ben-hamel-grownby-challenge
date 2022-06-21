@@ -80,21 +80,6 @@ const FarmList = ({ modalState }: FarmListProps) => {
         )}
         keyExtractor={(item) => item.id}
       />
-      {/* {farms.map((farm) => (
-        <View key={farm.id}>
-          <Text>Name: {farm.name}</Text>
-          <Text>Display Name: {farm.displayName}</Text>
-          <Text>Phone: {farm.phone}</Text>
-          <Text>Open Hours: {farm.openHours}</Text>
-          <Image
-            source={{
-              uri: farm.image,
-            }}
-            style={styles.itemPhoto}
-            resizeMode="cover"
-          />
-        </View>
-      ))} */}
     </>
   );
 };

@@ -41,6 +41,7 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* <View style={styles.contentWrapper}> */}
       <View style={styles.headerWrapper}>
         <View style={styles.logoContainer}>
           <Image source={LOGO} style={styles.logo} resizeMode={"contain"} />
@@ -56,6 +57,7 @@ const HomeScreen = () => {
       />
       <FarmList modalState={modalVisible} />
       <AddFarmModal modalVisible={modalVisible} toggleModal={toggleModal} />
+      {/* </View> */}
     </SafeAreaView>
   );
 };
@@ -66,7 +68,15 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#b3c4b9",
     flex: 1,
+    // justifyContent: "center",
+    // alignItems: "center",
+    // maxWidth: 800,
   },
+  // contentWrapper: {
+  //   minWidth: "400px",
+  //   maxWidth: "800px",
+
+  // },
   headerWrapper: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -77,6 +87,7 @@ const styles = StyleSheet.create({
   logoContainer: {},
   logo: {
     width: 150,
+    height: 78,
   },
   button: {
     backgroundColor: "#6dbe4b",
