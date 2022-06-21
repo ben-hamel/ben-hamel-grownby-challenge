@@ -64,7 +64,6 @@ const LoginForm = () => {
           { handleChange, handleBlur, handleSubmit, values, errors, touched }
         ) => (
           <View>
-            {/* <Text>Email</Text> */}
             <TextInput
               style={styles.inputField}
               placeholder="Email"
@@ -75,11 +74,11 @@ const LoginForm = () => {
               autoCorrect={false}
               keyboardType="email-address"
               textContentType="emailAddress"
+              testID="email-input"
             />
             {errors.email && touched.email && (
               <Text style={styles.error}>{errors.email}</Text>
             )}
-            {/* <Text>Password</Text> */}
             <TextInput
               style={styles.inputField}
               placeholder="Password"
@@ -88,7 +87,9 @@ const LoginForm = () => {
               value={values.password}
               autoCapitalize="none"
               autoCorrect={false}
-              keyboardType="email-address"
+              // keyboardType="email-address"
+              textContentType="password"
+              testID="password-input"
             />
             {errors.password && touched.password && (
               <Text style={styles.error}>{errors.password}</Text>
@@ -100,7 +101,7 @@ const LoginForm = () => {
           </View>
         )}
       </Formik>
-      {/* <Button title="Register" onPress={() => navigation.navigate("SignUp")} /> */}
+
       <Pressable
         style={styles.button}
         onPress={() => navigation.navigate("SignUp")}

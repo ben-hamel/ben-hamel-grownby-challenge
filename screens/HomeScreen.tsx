@@ -41,7 +41,6 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <View style={styles.contentWrapper}> */}
       <View style={styles.headerWrapper}>
         <View style={styles.logoContainer}>
           <Image source={LOGO} style={styles.logo} resizeMode={"contain"} />
@@ -51,13 +50,13 @@ const HomeScreen = () => {
         </Pressable>
       </View>
       <PrimaryButton
-        text={"Sign out"}
+        text={"Sign Out"}
         size={"large"}
         onPress={() => signOutUser()}
+        data-cy="sign-out-button"
       />
       <FarmList modalState={modalVisible} />
       <AddFarmModal modalVisible={modalVisible} toggleModal={toggleModal} />
-      {/* </View> */}
     </SafeAreaView>
   );
 };
@@ -68,15 +67,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#b3c4b9",
     flex: 1,
-    // justifyContent: "center",
-    // alignItems: "center",
-    // maxWidth: 800,
   },
-  // contentWrapper: {
-  //   minWidth: "400px",
-  //   maxWidth: "800px",
 
-  // },
   headerWrapper: {
     flexDirection: "row",
     justifyContent: "space-between",

@@ -134,7 +134,8 @@ const AddFarmModal = ({ toggleModal, modalVisible }: AddFarmModalProps) => {
                   autoCapitalize="none"
                   autoCorrect={false}
                   keyboardType="email-address"
-                  textContentType="emailAddress"
+                  // textContentType="emailAddress"
+                  testID="displayName-input"
                 />
                 {errors.displayName && touched.displayName && (
                   <Text style={styles.error}>{errors.displayName}</Text>
@@ -149,6 +150,7 @@ const AddFarmModal = ({ toggleModal, modalVisible }: AddFarmModalProps) => {
                   autoCorrect={false}
                   keyboardType="email-address"
                   textContentType="emailAddress"
+                  testID="farmName"
                 />
                 {errors.name && touched.name && (
                   <Text style={styles.error}>{errors.name}</Text>
@@ -163,6 +165,7 @@ const AddFarmModal = ({ toggleModal, modalVisible }: AddFarmModalProps) => {
                   autoCorrect={false}
                   keyboardType="numeric"
                   textContentType="emailAddress"
+                  testID="phone"
                 />
                 <TextInput
                   style={[styles.inputField, styles.child]}
@@ -174,6 +177,7 @@ const AddFarmModal = ({ toggleModal, modalVisible }: AddFarmModalProps) => {
                   autoCorrect={false}
                   keyboardType="email-address"
                   textContentType="emailAddress"
+                  testID="openHours"
                 />
                 <View style={styles.child}>
                   <PrimaryButton
