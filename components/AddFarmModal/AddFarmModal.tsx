@@ -135,7 +135,7 @@ const AddFarmModal = ({ toggleModal, modalVisible }: AddFarmModalProps) => {
                   autoCorrect={false}
                   keyboardType="email-address"
                   // textContentType="emailAddress"
-                  testID="displayName-input"
+                  testID="display-name-input"
                 />
                 {errors.displayName && touched.displayName && (
                   <Text style={styles.error}>{errors.displayName}</Text>
@@ -150,7 +150,7 @@ const AddFarmModal = ({ toggleModal, modalVisible }: AddFarmModalProps) => {
                   autoCorrect={false}
                   keyboardType="email-address"
                   textContentType="emailAddress"
-                  testID="farmName"
+                  testID="farm-name-input"
                 />
                 {errors.name && touched.name && (
                   <Text style={styles.error}>{errors.name}</Text>
@@ -165,7 +165,7 @@ const AddFarmModal = ({ toggleModal, modalVisible }: AddFarmModalProps) => {
                   autoCorrect={false}
                   keyboardType="numeric"
                   textContentType="emailAddress"
-                  testID="phone"
+                  testID="phone-input"
                 />
                 <TextInput
                   style={[styles.inputField, styles.child]}
@@ -177,12 +177,13 @@ const AddFarmModal = ({ toggleModal, modalVisible }: AddFarmModalProps) => {
                   autoCorrect={false}
                   keyboardType="email-address"
                   textContentType="emailAddress"
-                  testID="openHours"
+                  testID="open-hours-input"
                 />
                 <View style={styles.child}>
                   <PrimaryButton
                     text={"Add Farm Image"}
                     onPress={() => pickImage(setFieldValue)}
+                    testID="add-farm-image-button"
                   />
                   {errors.image && touched.image && (
                     <Text style={styles.error}>{errors.image}</Text>
@@ -203,10 +204,18 @@ const AddFarmModal = ({ toggleModal, modalVisible }: AddFarmModalProps) => {
                   )}
                 </View>
                 <View style={styles.child}>
-                  <PrimaryButton text={"Reset Form"} onPress={resetForm} />
+                  <PrimaryButton
+                    text={"Reset Form"}
+                    onPress={resetForm}
+                    testID="reset-form-button"
+                  />
                 </View>
                 <View style={styles.child}>
-                  <PrimaryButton text={"submit"} onPress={handleSubmit} />
+                  <PrimaryButton
+                    text={"submit"}
+                    onPress={handleSubmit}
+                    testID="submit-button"
+                  />
                 </View>
               </View>
             </TouchableWithoutFeedback>

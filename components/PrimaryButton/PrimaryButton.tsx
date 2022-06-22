@@ -1,7 +1,30 @@
 import React from "react";
-import { Text, View, TouchableOpacity, Dimensions } from "react-native";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  Pressable,
+  Dimensions,
+} from "react-native";
 
 const width = Dimensions.get("window").width;
+
+interface Props {
+  text: string;
+  onPress: () => void;
+  type?: "filled" | "outlined";
+  bordered?: boolean;
+  size?: "large";
+  testID?: string;
+}
+
+interface textStyle {
+  color: string;
+  fontSize: number;
+  // textTransform: string;
+  textAlign: string;
+  // fontFamily: string;
+}
 
 const PrimaryButton = ({
   text,
@@ -9,7 +32,8 @@ const PrimaryButton = ({
   type = "filled",
   bordered = false,
   size = "large",
-}) => {
+  testID,
+}: Props) => {
   const large = "100%";
   const small = width / 2;
   const btnSize = size === "large" ? large : small;
@@ -22,14 +46,12 @@ const PrimaryButton = ({
     paddingVertical: 8,
     width: btnSize,
     borderRadius: btnBorderRadius,
+    textAlign: "center",
   };
 
   const textCommonStyle = {
     color: btnTextColor,
     fontSize: 16,
-    textTransform: "uppercase",
-    textAlign: "center",
-    // fontFamily: "Quicksand-Medium",
   };
 
   const border = type === "outlined" && {
@@ -38,11 +60,11 @@ const PrimaryButton = ({
   };
 
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+    <Pressable onPress={onPress} testID={testID}>
       <View style={[containerCommonStyle, border]}>
         <Text style={[textCommonStyle]}> {text} </Text>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

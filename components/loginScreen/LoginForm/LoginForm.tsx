@@ -87,14 +87,13 @@ const LoginForm = () => {
               value={values.password}
               autoCapitalize="none"
               autoCorrect={false}
-              // keyboardType="email-address"
+              keyboardType="email-address"
               textContentType="password"
               testID="password-input"
             />
             {errors.password && touched.password && (
               <Text style={styles.error}>{errors.password}</Text>
             )}
-            {/* <Button title="Submit" onPress={handleSubmit as any} /> */}
             <Pressable style={styles.button} onPress={handleSubmit as any}>
               <Text style={styles.buttonText}>Login</Text>
             </Pressable>
